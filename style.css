@@ -1,7 +1,21 @@
 html {
-    scroll-behavior: smooth;
-}
+/* 모바일 화면(너비 768px 이하)에만 적용되는 코드 */
+@media screen and (max-width: 768px) {
+  /* Education과 Experience를 감싸고 있는 부모 컨테이너 클래스 이름으로 변경하세요 */
+  .edu-exp-container { 
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 화면을 똑같은 비율의 2단으로 나눔 */
+    gap: 15px; /* 양쪽 단 사이의 간격 (원하시는 대로 조절 가능) */
+  }
 
+  /* 만약 내용이 너무 길어 줄바꿈이 안 예쁘게 된다면 안의 텍스트 크기를 살짝 줄여주는 것도 좋습니다 */
+  .edu-exp-container p {
+    font-size: 14px; 
+  }
+}
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
 .line-clamp-1 {
     display: -webkit-box;
     -webkit-line-clamp: 1;
