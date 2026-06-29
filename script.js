@@ -1,65 +1,87 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     // ==========================================
-    // 💡 스플릿 스크린 (백서 패널) 글로벌 제어 함수
+    // 💡 아키텍처 팝업 모달 제어 함수 (확장 애니메이션 적용)
     // ==========================================
-    const mainWrapper = document.getElementById("main-wrapper");
-    const mainNav = document.getElementById("main-nav");
-    const splitPanel = document.getElementById("split-panel");
-    const splitCloseBtn = document.getElementById("split-panel-close");
-    const splitTitle = document.getElementById("split-panel-title");
-    const splitBody = document.getElementById("split-panel-body");
-    const splitIcon = document.getElementById("split-panel-icon"); // ⭐️ 아이콘 요소 추가
+    const archModal = document.getElementById("arch-modal");
+    const archModalContent = document.getElementById("arch-modal-content");
+    const archModalCloseBtn = document.getElementById("arch-modal-close");
+    const archModalTitle = document.getElementById("arch-modal-title");
+    const archModalBody = document.getElementById("arch-modal-body");
+    const archModalIcon = document.getElementById("arch-modal-icon");
 
-    // 트러블슈팅 카드의 인라인 버튼에서도 호출할 수 있도록 window 객체에 할당
-    window.openSplitPanel = function(archId) {
+    window.openArchModal = function(archId) {
         if (!DATA.architecture) return;
         const arch = DATA.architecture.find(a => a.id === archId);
         if (!arch) return;
 
-        // 1. 백서 데이터 주입 (타이틀, 본문, 그리고 아이콘)
-        if (splitTitle) splitTitle.innerText = arch.title;
-        if (splitBody) splitBody.innerHTML = arch.content;
-        if (splitIcon && arch.icon) {
-            // ⭐️ 해당 카드의 고유 아이콘으로 클래스 변경
-            splitIcon.className = arch.icon + " text-blue-400 text-lg md:text-xl shrink-0";
+        // 1. 모달 내부 데이터 주입
+        if (archModalTitle) archModalTitle.innerText = arch.title;
+        if (archModalBody) archModalBody.innerHTML = arch.content;
+        if (archModalIcon && arch.icon) {
+            archModalIcon.className = arch.icon + " text-blue-400 text-lg";
         }
 
-        // 2. 스플릿 애니메이션 클래스 부착 (화면 분할)
-        if (mainWrapper) mainWrapper.classList.add("split-active-main");
-        if (mainNav) mainNav.classList.add("split-active-nav");
-        if (splitPanel) splitPanel.classList.add("split-active-panel");
+        // 2. 모달 열기 & 확장 애니메이션 적용
+        if (archModal) {
+            archModal.classList.remove("hidden");
+            // 브라우저 리플로우 강제 유발 (트랜지션을 위해)
+            void archModal.offsetWidth; 
+            archModal.classList.remove("opacity-0", "pointer-events-none");
+            archModal.classList.add("flex");
+            
+            if (archModalContent) {
+                archModalContent.classList.remove("scale-95");
+                archModalContent.classList.add("scale-100");
+            }
+            
+            // 배경 스크롤 방지
+            document.body.style.overflow = "hidden";
+        }
 
-        // 3. 아키텍처 섹션으로 부드럽게 화면 스크롤 이동
-        document.getElementById("architecture").scrollIntoView({ behavior: 'smooth', block: 'start' });
-        
-        // 4. 백서 내부에 코드가 있다면 구문 강조 다시 적용
+        // 3. 백서 내부에 코드가 있다면 구문 강조 다시 적용
         setTimeout(() => {
             if (typeof hljs !== 'undefined') {
-                document.querySelectorAll('#split-panel-body pre code').forEach((block) => {
+                document.querySelectorAll('#arch-modal-body pre code').forEach((block) => {
                     hljs.highlightElement(block);
                 });
             }
         }, 100);
     };
 
-    window.closeSplitPanel = function() {
-        if (mainWrapper) mainWrapper.classList.remove("split-active-main");
-        if (mainNav) mainNav.classList.remove("split-active-nav");
-        if (splitPanel) splitPanel.classList.remove("split-active-panel");
-        
-        // 닫을 때 내부 내용 비우기 (잔상 방지)
-        setTimeout(() => {
-            if (splitBody) splitBody.innerHTML = "";
-        }, 500);
+    window.closeArchModal = function() {
+        if (archModal) {
+            // 페이드아웃 및 축소 애니메이션 먼저 적용
+            archModal.classList.add("opacity-0", "pointer-events-none");
+            if (archModalContent) {
+                archModalContent.classList.remove("scale-100");
+                archModalContent.classList.add("scale-95");
+            }
+            
+            // 애니메이션 종료 후 hidden 처리 및 초기화
+            setTimeout(() => {
+                archModal.classList.add("hidden");
+                archModal.classList.remove("flex");
+                document.body.style.overflow = "";
+                if (archModalBody) archModalBody.innerHTML = "";
+            }, 300); // duration-300 과 동일한 시간
+        }
     };
 
-    if (splitCloseBtn) {
-        splitCloseBtn.addEventListener("click", window.closeSplitPanel);
+    // 닫기 버튼 이벤트
+    if (archModalCloseBtn) {
+        archModalCloseBtn.addEventListener("click", window.closeArchModal);
     }
 
-    
-    
+    // 모달 외부 영역(배경) 클릭 시 닫기
+    if (archModal) {
+        archModal.addEventListener("click", (e) => {
+            if (e.target === archModal) {
+                window.closeArchModal();
+            }
+        });
+    }
+
     // ==========================================
     // 1. 트러블슈팅 섹션 (좌우 무한 순환 3D 휠 슬라이더 - 자세히 보기 복구 완료)
     // ==========================================
@@ -310,7 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 2. 아키텍처 섹션 (2x2 그리드 -> 스플릿 시 1x4 압축 반응형 구조)
+    // 2. 아키텍처 섹션 (2x2 그리드) - 클릭 시 Modal 팝업
     // ==========================================
     try {
         const quadContainer = document.getElementById("arch-quadrant-container");
@@ -320,7 +342,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const tags = item.tags.map(t => `<span class="text-[10px] text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20 font-mono">#${t}</span>`).join("");
                 
                 quadHtml += `
-                    <div onclick="window.openSplitPanel('${item.id}')" class="arch-card w-full bg-gray-900/80 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 hover:border-blue-500/40 hover:bg-gray-800 transition-all duration-300 cursor-pointer group shadow-lg hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] relative overflow-hidden flex flex-col justify-between h-full min-h-[200px] md:min-h-[220px]">
+                    <div onclick="window.openArchModal('${item.id}')" class="arch-card w-full bg-gray-900/80 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 hover:border-blue-500/40 hover:bg-gray-800 transition-all duration-300 cursor-pointer group shadow-lg hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] relative overflow-hidden flex flex-col justify-between h-full min-h-[200px] md:min-h-[220px]">
                         
                         <div class="absolute -inset-full bg-gradient-to-r from-blue-500/0 via-blue-500/5 to-blue-500/0 opacity-0 group-hover:opacity-100 transition duration-500 blur-2xl z-0"></div>
                         
