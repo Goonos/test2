@@ -31,6 +31,8 @@
 
         <header id="about" class="pt-28 md:pt-32 pb-16 md:pb-20 px-5 md:px-6 max-w-5xl mx-auto border-b border-gray-800">
             <div class="grid md:grid-cols-3 gap-8 md:gap-12 items-start w-full">
+                
+                <!-- 💡 왼쪽 영역 (프로필 및 갤러리) -->
                 <div class="md:col-span-1 flex flex-col items-center text-center space-y-5 w-full">
                     <div class="w-36 h-36 md:w-48 md:h-48 shrink-0 bg-gray-800 border border-gray-700 rounded-2xl flex flex-col items-center justify-center text-gray-500 relative overflow-hidden group hover:border-blue-500 transition">
                         <img src="image/0.jpg" alt="권오승 프로필" class="w-full h-full object-cover">
@@ -47,9 +49,11 @@
                         <div class="pt-4 w-full">
                             <p class="text-gray-500 text-[11px] mb-2 text-left font-sans uppercase tracking-wider"><i class="fas fa-images mr-1"></i> Gallery</p>
                             <div id="album-grid" class="grid grid-cols-3 gap-1.5 w-full aspect-square bg-gray-800/50 p-1.5 rounded-xl border border-gray-800"></div>
+                        </div>
                     </div>
-                </div>
+                </div> <!-- 🚨 이 닫는 태그가 지워져서 레이아웃이 깨졌었습니다. 복구 완료! -->
 
+                <!-- 💡 오른쪽 영역 (본문 및 이력) -->
                 <div class="md:col-span-2 space-y-8 w-full">
                     <div class="text-center md:text-left">
                         <span class="text-blue-400 font-mono text-xs block mb-1.5 md:mb-1">[전문성을 바탕으로 유연하게 소통하는 파트너]</span>
@@ -143,106 +147,43 @@
                                 </ul>
                             </div>
 
-                            <!-- 💡 새로 추가된 Tools 섹션 -->
                             <div class="text-left mt-6">
                                 <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3 flex items-center justify-start gap-2">
                                     <i class="fas fa-toolbox text-blue-500 text-xs"></i> Skills & Tools
                                 </h3>
-                                <div class="flex flex-wrap gap-2 text-left">
-                                    <!-- Word -->
+                                <div class="flex flex-wrap gap-2 text-left">                
                                     <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-blue-500 transition">
                                         <i class="fas fa-file-word text-blue-400"></i> Word
                                     </span>
-                                    <!-- Excel -->
                                     <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-green-500 transition">
                                         <i class="fas fa-file-excel text-green-500"></i> Excel
                                     </span>
-                                    <!-- PPT -->
                                     <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-red-400 transition">
                                         <i class="fas fa-file-powerpoint text-red-400"></i> PPT
                                     </span>
-                                    <!-- Oracle -->
                                     <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-red-500 transition">
                                         <i class="fas fa-database text-red-500"></i> Oracle
                                     </span>
-                                    <div class="text-left">
-                                <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3 flex items-center justify-start gap-2">
-                                    <i class="fas fa-certificate text-blue-500 text-xs"></i> Certificates
-                                </h3>
-                                <ul class="space-y-2 text-left">
-                                    <li class="bg-gray-800/30 px-3 py-2.5 rounded border border-gray-800/50 flex justify-between items-center text-left">
-                                        <strong class="text-gray-200 block text-sm font-bold">SQLD (SQL 개발자)</strong>
-                                    </li>
-                                    <li class="bg-gray-800/30 px-3 py-2.5 rounded border border-gray-800/50 flex justify-between items-center text-left">
-                                        <strong class="text-gray-200 block text-sm font-bold">정보처리기사 (필기)</strong>
-                                    </li>
-                                    <li class="bg-gray-800/30 px-3 py-2.5 rounded border border-gray-800/50 flex justify-between items-center text-left">
-                                        <strong class="text-gray-200 block text-sm font-bold">정보기기운용기능사</strong>
-                                    </li>
-                                    <li class="bg-gray-800/30 px-3 py-2.5 rounded border border-gray-800/50 flex justify-between items-center text-left">
-                                        <strong class="text-gray-200 block text-sm font-bold">정보통신기기기능사</strong>
-                                    </li>
-                                </ul>
+                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-yellow-400 transition">
+                                        <i class="fab fa-linux text-yellow-400"></i> Linux
+                                    </span>
+                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-purple-400 transition">
+                                        <i class="fas fa-robot text-purple-400"></i> Gemini
+                                    </span>
+                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-blue-300 transition">
+                                        <i class="fas fa-store text-blue-300"></i> 카페24
+                                    </span>
+                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-gray-300 transition">
+                                        <i class="fas fa-shopping-bag text-gray-400"></i> 고도몰5
+                                    </span>
+                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-white transition">
+                                        <i class="fab fa-github text-white"></i> GitHub
+                                    </span>
+                                </div>
                             </div>
 
-                            <!-- 💡 새로 추가된 Tools 섹션 -->
-                            <div class="text-left mt-6">
-                                <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-3 flex items-center justify-start gap-2">
-                                    <i class="fas fa-toolbox text-blue-500 text-xs"></i> Skills & Tools
-                                </h3>
-                                <div class="flex flex-wrap gap-2 text-left">
-                                    <!-- Word -->
-                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-blue-500 transition">
-                                        <i class="fas fa-file-word text-blue-400"></i> Word
-                                    </span>
-                                    <!-- Excel -->
-                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-green-500 transition">
-                                        <i class="fas fa-file-excel text-green-500"></i> Excel
-                                    </span>
-                                    <!-- PPT -->
-                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-red-400 transition">
-                                        <i class="fas fa-file-powerpoint text-red-400"></i> PPT
-                                    </span>
-                                    <!-- Oracle -->
-                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-red-500 transition">
-                                        <i class="fas fa-database text-red-500"></i> Oracle
-                                    </span>
-                                    <!-- Gemini -->
-                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-purple-400 transition">
-                                        <i class="fas fa-robot text-purple-400"></i> Gemini
-                                    </span>
-                                    <!-- Cafe24 -->
-                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-blue-300 transition">
-                                        <i class="fas fa-store text-blue-300"></i> 카페24
-                                    </span>
-                                    <!-- Godomall5 -->
-                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-gray-300 transition">
-                                        <i class="fas fa-shopping-bag text-gray-400"></i> 고도몰5
-                                    </span>
-                                    <!-- GitHub -->
-                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-white transition">
-                                        <i class="fab fa-github text-white"></i> GitHub
-                                    </span>
-                                </div>
-                            </div>
-                                    <!-- Gemini -->
-                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-purple-400 transition">
-                                        <i class="fas fa-robot text-purple-400"></i> Gemini
-                                    </span>
-                                    <!-- Cafe24 -->
-                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-blue-300 transition">
-                                        <i class="fas fa-store text-blue-300"></i> 카페24
-                                    </span>
-                                    <!-- Godomall5 -->
-                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-gray-300 transition">
-                                        <i class="fas fa-shopping-bag text-gray-400"></i> 고도몰5
-                                    </span>
-                                    <!-- GitHub -->
-                                    <span class="bg-gray-800/30 border border-gray-800/50 text-gray-300 px-2.5 py-1.5 rounded-md text-[11px] font-medium flex items-center gap-1.5 hover:border-white transition">
-                                        <i class="fab fa-github text-white"></i> GitHub
-                                    </span>
-                                </div>
-                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
