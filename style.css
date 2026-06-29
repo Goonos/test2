@@ -1,6 +1,6 @@
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5.5rem;
+    scroll-padding-top: 4rem;
 }
 .line-clamp-1 {
     display: -webkit-box;
