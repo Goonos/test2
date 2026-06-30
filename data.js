@@ -91,6 +91,13 @@ const DATA = {
     // 3. 외부 블로그 링크 데이터
    blogLogs: [  
        {
+            date: "2026-06-30",
+            title: "6회차 - 파이썬 람다와 Import",
+            summary: "익명 함수(lambda)와 고차 함수(map, filter)를 활용해 복잡한 반복문 없이 데이터를 효율적으로 정제하는 기법을 배웠습니다. 이에 더해 import를 통한 모듈화 구조를 습득하면서, 복잡한 로직을 재사용 가능한 독립적 단위로 쪼개고 관리하는 개발의 효율성을 체감할 수 있었습니다.",
+            tags: ["Python"],
+            link: "https://blog.naver.com/10soong/224332026333"
+        }, 
+       {
             date: "2026-06-29",
             title: "5회차 - 파이썬 함수선언",
             summary: "다양한 자료구조 내 데이터의 효율적인 순회 기법(for in)과 코드 축약형 제어문(리스트 내포)을 통해 파이썬 고유의 최적화된 데이터 처리 방식을 이해하고, 반복적인 로직을 재사용 가능한 단위로 구조화하는 함수 지향적 설계 능력을 배양했습니다",
@@ -125,7 +132,6 @@ const DATA = {
             tags: ["Python"],
             link: "https://blog.naver.com/10soong/224324868806"
         },
-           { date: "yyyy-mm-dd", title: "text", summary: "text", tags: ["Python"], link: "https://blog.naver.com/10soong" },
            { date: "yyyy-mm-dd", title: "text", summary: "text", tags: ["Python"], link: "https://blog.naver.com/10soong" },
            { date: "yyyy-mm-dd", title: "text", summary: "text", tags: ["Python"], link: "https://blog.naver.com/10soong" },
            { date: "yyyy-mm-dd", title: "text", summary: "text", tags: ["Python"], link: "https://blog.naver.com/10soong" },
