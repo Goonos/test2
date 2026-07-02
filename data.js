@@ -91,6 +91,13 @@ const DATA = {
     // 3. 외부 블로그 링크 데이터
    blogLogs: [ 
        {
+            date: "2026-07-02",
+            title: "8회차 - 8회차 - 파이썬 CSV와 클래스",
+            summary: "파이썬으로 데이터를 파일에 저장하고 읽어오는 CSV 파일 입출력 기능과, 프로그램을 구조적으로 만들 수 있는 클래스 개념을 학습했습니다. 외부 데이터를 프로그램으로 가져와 다루는 방법부터, 코드의 재사용성을 높여주는 객체지향 프로그래밍의 기초까지 배우며 실무 프로그램 개발을 위한 데이터 처리와 설계의 기본 원리를 다뤘습니다.",
+            tags: ["Python"],
+            link: "https://blog.naver.com/10soong/224334387816"
+        }, 
+       {
             date: "2026-07-01",
             title: "7회차 - 파이썬 파일입출력과 예외처리",
             summary: "파이썬의 외부 데이터 연동과 프로그램 안정성의 핵심인 파일 입출력 및 예외 처리를 학습하여, 텍스트 데이터의 영속적 저장부터 실행 중 발생할 수 있는 잠재적 오류의 체계적 제어까지, 실무형 프로그램 개발과 견고한 소프트웨어 설계의 토대가 되는 데이터 핸들링 및 예외 관리 메커니즘의 동작 원리와 활용법을 다뤘습니다.",
@@ -139,7 +146,6 @@ const DATA = {
             tags: ["Python"],
             link: "https://blog.naver.com/10soong/224324868806"
         },
-           { date: "yyyy-mm-dd", title: "text", summary: "text", tags: ["Python"], link: "https://blog.naver.com/10soong" },
            { date: "yyyy-mm-dd", title: "text", summary: "text", tags: ["Python"], link: "https://blog.naver.com/10soong" },
            { date: "yyyy-mm-dd", title: "text", summary: "text", tags: ["Python"], link: "https://blog.naver.com/10soong" },
            { date: "yyyy-mm-dd", title: "text", summary: "text", tags: ["Python"], link: "https://blog.naver.com/10soong" },
