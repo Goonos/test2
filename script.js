@@ -427,16 +427,20 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             [document.getElementById("blog-prev"), document.getElementById("blog-prev-mobile")].forEach(btn => {
-                btn?.addEventListener("click", () => {
-                    if (currentPage > 0) { currentPage--; updateSlider(); }
-                });
-            });
+    btn?.addEventListener("click", () => {
+        // 첫 페이지에서 이전 버튼 클릭 시 마지막 페이지로 순환
+        currentPage = (currentPage - 1 + totalPages) % totalPages; 
+        updateSlider();
+    });
+});
 
-            [document.getElementById("blog-next"), document.getElementById("blog-next-mobile")].forEach(btn => {
-                btn?.addEventListener("click", () => {
-                    if (currentPage < totalPages - 1) { currentPage++; updateSlider(); }
-                });
-            });
+[document.getElementById("blog-next"), document.getElementById("blog-next-mobile")].forEach(btn => {
+    btn?.addEventListener("click", () => {
+        // 마지막 페이지에서 다음 버튼 클릭 시 첫 페이지로 순환
+        currentPage = (currentPage + 1) % totalPages; 
+        updateSlider();
+    });
+});
 
             updateSlider();
         }
