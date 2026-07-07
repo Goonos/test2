@@ -91,6 +91,13 @@ const DATA = {
     // 3. 외부 블로그 링크 데이터
    blogLogs: [
        {
+            date: "2026-07-07",
+            title: "11회차 - 리눅스 커맨드 및 구조, Vi 커맨드, 파일 디렉토리 수정 커맨드",
+            summary: "리눅스 핵심 명령어를 활용한 시스템 제어와 Vi 에디터를 통한 환경 설정 파일 편집을 진행했으며, 디렉터리 구조 분석 및 파일 권한 수정을 통해 리눅스 파일 시스템 관리 전반을 경험했습니다.",
+            tags: ["Linux"],
+            link: "https://blog.naver.com/10soong/224339414144"
+        },
+       {
             date: "2026-07-06",
             title: "10회차 - 리눅스 VMware11, Oracle Enterprise Linux5.8 설치",
             summary: "VMware 11 기반의 Oracle Enterprise Linux 5.8 설치를 진행하며 가상화 환경 구축 및 OS 배치 과정을 경험했습니다.",
