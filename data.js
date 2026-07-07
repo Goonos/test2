@@ -92,7 +92,7 @@ const DATA = {
    blogLogs: [
        {
             date: "2026-07-06",
-            title: "10회차 - VMware11, Oracle Enterprise Linux5.8 설치",
+            title: "10회차 - 리눅스 VMware11, Oracle Enterprise Linux5.8 설치",
             summary: "VMware 11 기반의 Oracle Enterprise Linux 5.8 설치를 진행하며 가상화 환경 구축 및 OS 배치 과정을 경험했습니다.",
             tags: ["Linux"],
             link: "https://blog.naver.com/10soong/224338338262"
