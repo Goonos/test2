@@ -91,6 +91,13 @@ const DATA = {
     // 3. 외부 블로그 링크 데이터
    blogLogs: [
        {
+            date: "2026-07-09",
+            title: "13회차 - 오라클 접속 권한 공유, SQL*Plus 커맨드",
+            summary: "SQL*Plus 툴을 활용한 데이터베이스 제어 명령어를 숙달하고, 사용자 계정 생성부터 데이터베이스 관리자(DBA) 권한을 포함한 시스템 및 객체 접근 권한(Grant/Revoke) 부여 프로세스를 직접 실행해 보았습니다.",
+            tags: ["Oracle","Linux"],
+            link: "https://blog.naver.com/10soong/224341668109"
+        },
+       {
             date: "2026-07-08",
             title: "12회차 - 오라클11g 설치, 파라미터 설정, network 연결, putty로 접속",
             summary: "Oracle 11g 데이터베이스 설치 및 인프라 구축 프로세스를 진행하며 커널 파라미터 최적화와 리스너(Listener) 및 tnsnames 설정을 통한 네트워크 연동을 완료하였고, Putty를 활용한 원격 CLI 접속 환경을 구축하여 데이터베이스 관리 전반을 경험했습니다.",
