@@ -180,11 +180,7 @@ const DATA = {
             summary: "프로그래밍 프로토타이핑과 자동화 스크립트의 기본이 되는 데이터 입출력 제어, 형변환(Type Casting), 연산자 메커니즘 및 문자열 처리 기초를 정리했습니다.",
             tags: ["Python"],
             link: "https://blog.naver.com/10soong/224324868806"
-        },
-           { date: "yyyy-mm-dd", title: "text", summary: "text", tags: ["Python"], link: "https://blog.naver.com/10soong" },
-           { date: "yyyy-mm-dd", title: "text", summary: "text", tags: ["Python"], link: "https://blog.naver.com/10soong" },
-           { date: "yyyy-mm-dd", title: "text", summary: "text", tags: ["Python"], link: "https://blog.naver.com/10soong" },
-           { date: "yyyy-mm-dd", title: "text", summary: "text", tags: ["Python"], link: "https://blog.naver.com/10soong" }
+        }
     ],
     album: [
         { id: "img-01", src: "image/1.jpg", title: "[취미활동]", comment: "25년 8월 홍대에서 일렉기타 포지션으로 공연" },
