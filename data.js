@@ -91,6 +91,13 @@ const DATA = {
     // 3. 외부 블로그 링크 데이터
    blogLogs: [
        {
+            date: "2026-07-10",
+            title: "14회차 - 오라클 SQL 실습(SELECT절, FROM절, WHERE절)",
+            summary: "오라클 SQL의 핵심인 SELECT, FROM, WHERE 절을 활용하여 데이터베이스 내 데이터를 조건별로 필터링하고 원하는 구조로 추출하는 쿼리 작성 실습을 진행하며, 정밀한 데이터 조회 및 관계형 데이터베이스(RDB) 조작법 전반을 경험했습니다.",
+            tags: ["Oracle"],
+            link: "https://blog.naver.com/10soong/224342753990"
+        },
+       {
             date: "2026-07-09",
             title: "13회차 - 오라클 접속 권한 공유, SQL*Plus 커맨드",
             summary: "SQL*Plus 툴을 활용한 데이터베이스 제어 명령어를 숙달하고, 사용자 계정 생성부터 데이터베이스 관리자(DBA) 권한을 포함한 시스템 및 객체 접근 권한(Grant/Revoke) 부여 프로세스를 직접 실행해 보았습니다.",
